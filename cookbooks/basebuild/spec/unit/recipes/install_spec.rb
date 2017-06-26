@@ -18,7 +18,7 @@ describe 'basebuild::default' do
     end
 
     it 'installs the necessary packages' do
-      expect(chef_run).to install_package('vim')
+      expect(chef_run).to install_package 'vim'
     end
   end
 end
