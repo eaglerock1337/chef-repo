@@ -1,9 +1,9 @@
 name 'basebuild'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer 'EagleRock'
+maintainer_email 'eaglerock@eagleworld.net'
 license 'all_rights'
-description 'Installs/Configures basebuild'
-long_description 'Installs/Configures basebuild'
+description 'Basebuild cookbook'
+long_description 'Basebuild cookbook for all eagleworld.net systems'
 version '0.1.0'
 
 # If you upload to Supermarket you should set this so your cookbook

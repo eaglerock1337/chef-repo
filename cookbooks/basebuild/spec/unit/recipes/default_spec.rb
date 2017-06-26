@@ -16,5 +16,16 @@ describe 'basebuild::default' do
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error
     end
+
+    it 'install the necessary packages' do
+
+    it 'configures DNS for eagleworld.net' do
+
+    it 'adds eaglerock to the sudo group' do
+
+    it 'configures vim for all users' do
+
+    it 'configures PS1 for all users' do
+
   end
 end
