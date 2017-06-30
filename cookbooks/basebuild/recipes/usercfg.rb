@@ -8,7 +8,7 @@ user 'eaglerock' do
   comment 'Peter Marks'
   home '/home/eaglerock'
   shell '/bin/bash'
-  group 'eaglerock'
+  # group 'eaglerock'
   password '$6$wadHiPYm$MsW0ZwGNLlMpnSB6Fnym1T96XoIcyvXI3nch4.9KSQtsrVqIobmcJIcw3GQWbICCoMCgfjNUX5UFnWIF38fb.0'
 end
 
