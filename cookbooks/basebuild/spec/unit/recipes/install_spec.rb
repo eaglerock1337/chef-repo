@@ -6,7 +6,7 @@
 
 require 'spec_helper'
 
-describe 'basebuild::default' do
+describe 'basebuild::install' do
   context 'When all attributes are default, on Debian' do
     let(:chef_run) do
       runner = ChefSpec::ServerRunner.new(platform: 'debian', version: '8.5')

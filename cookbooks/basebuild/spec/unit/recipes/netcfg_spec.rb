@@ -6,12 +6,12 @@
 
 require 'spec_helper'
 require 'serverspec'
-set :backend, :exec 
+set :backend, :exec
 
 describe 'basebuild::netcfg' do
-  context 'When all attributes are default, on an unspecified platform' do
+  context 'When all attributes are default, on Debian' do
     let(:chef_run) do
-      runner = ChefSpec::ServerRunner.new
+      runner = ChefSpec::ServerRunner.new(platform: 'debian', version: '8.5')
       runner.converge(described_recipe)
     end
 
