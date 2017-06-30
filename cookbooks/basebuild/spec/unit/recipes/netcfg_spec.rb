@@ -5,6 +5,8 @@
 # Copyright (c) 2017 The Authors, All Rights Reserved.
 
 require 'spec_helper'
+require 'serverspec'
+set :backend, :exec 
 
 describe 'basebuild::netcfg' do
   context 'When all attributes are default, on an unspecified platform' do
@@ -15,6 +17,12 @@ describe 'basebuild::netcfg' do
 
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error
+    end
+
+    describe host('bork.eagleworld.net') do
+      it 'can resolve the Chef server' do
+        expect(subject).to be_resolvable.by('dns')
+      end
     end
   end
 end

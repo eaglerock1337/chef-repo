@@ -6,6 +6,8 @@ description 'Basebuild cookbook'
 long_description 'Basebuild cookbook for all eagleworld.net systems'
 version '0.1.0'
 
+depends 'resolver'
+
 # If you upload to Supermarket you should set this so your cookbook
 # gets a `View Issues` link
 # issues_url 'https://github.com/<insert_org_here>/basebuild/issues' if respond_to?(:issues_url)

@@ -4,4 +4,6 @@
 #
 # Copyright (c) 2017 The Authors, All Rights Reserved.
 
-package 'vim'
+node['basebuild']['packages'].each do |p|
+  package p
+end
