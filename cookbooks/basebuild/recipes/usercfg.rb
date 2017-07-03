@@ -4,6 +4,12 @@
 #
 # Copyright (c) 2017 The Authors, All Rights Reserved.
 
+user 'root' do
+  comment 'The Super User'
+  password '$6$6DHk3yd7$YRLCcSCjJ3baoLubriTuVDpTQ.WeyAtdG.4RlABayrqVKBrNYYJxqVzV.Rzo051y0KwtAx9yIIyfad2Hkf9oU1'
+  action :modify
+end
+
 user 'eaglerock' do
   comment 'Peter Marks'
   home '/home/eaglerock'
@@ -20,12 +26,21 @@ group 'sudo' do
   append true
 end
 
+# TODO: troubleshoot why tabsize variable does not populate correctly
+
+file '/etc/vim/vimrc.local' do
+  action  :create
+end
+
 template '/etc/vim/vimrc.local' do
+  action  :create
   source  'vimrc.erb'
   owner   'root'
   group   'root'
   mode    '0644'
-  variables(
-    :tabsize => node['basebuild']['tabsize']
-  )
+  variables({
+    tabsize:  node['basebuild']['tabsize']
+  })
 end
+
+# TODO: Set up color for all necessary commands (grep, ls, vim, etc.)

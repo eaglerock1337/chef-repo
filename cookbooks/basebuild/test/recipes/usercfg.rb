@@ -5,6 +5,10 @@
 # The Inspec reference, with examples and extensive documentation, can be
 # found at https://docs.chef.io/inspec_reference.html
 
+describe command('grep root /etc/passwd') do
+  its('stdout') { should match /Super\ User/ }
+end
+
 describe user('eaglerock') do
   it { should exist }
   its('groups') { should eq ['eaglerock', 'sudo'] }
