@@ -4,9 +4,12 @@
 #
 # Copyright (c) 2017 The Authors, All Rights Reserved.
 
+root_pwd = data_bag_item('basebuild', 'root')
+eaglerock_pwd = data_bag_item('basebuild', 'eaglerock')
+
 user 'root' do
   comment 'The Super User'
-  password '$6$6DHk3yd7$YRLCcSCjJ3baoLubriTuVDpTQ.WeyAtdG.4RlABayrqVKBrNYYJxqVzV.Rzo051y0KwtAx9yIIyfad2Hkf9oU1'
+  password root_pwd['password']
   action :modify
 end
 
@@ -15,18 +18,14 @@ user 'eaglerock' do
   home '/home/eaglerock'
   shell '/bin/bash'
   # group 'eaglerock'
-  password '$6$wadHiPYm$MsW0ZwGNLlMpnSB6Fnym1T96XoIcyvXI3nch4.9KSQtsrVqIobmcJIcw3GQWbICCoMCgfjNUX5UFnWIF38fb.0'
+  password eaglerock_pwd['password']
 end
-
-# TODO: Data bag for password
 
 group 'sudo' do
   action :modify
   members 'eaglerock'
   append true
 end
-
-# TODO: troubleshoot why tabsize variable does not populate correctly
 
 file '/etc/vim/vimrc.local' do
   action  :create

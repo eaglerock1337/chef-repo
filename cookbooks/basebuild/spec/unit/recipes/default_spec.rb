@@ -17,6 +17,10 @@ describe 'basebuild::default' do
       expect { chef_run }.to_not raise_error
     end
 
+    it 'executes the apt recipe' do
+      expect(chef_run).to include_recipe('basebuild::apt')
+    end
+
     it 'executes the install recipe' do
       expect(chef_run).to include_recipe('basebuild::install')
     end
@@ -25,13 +29,8 @@ describe 'basebuild::default' do
       expect(chef_run).to include_recipe('basebuild::netcfg')
     end
 
-    it 'adds eaglerock to the sudo group' do
-    end
-
-    it 'configures vim for all users' do
-    end
-
-    it 'configures PS1 for all users' do
+    it 'executes the usercfg recipe' do
+      expect(chef_run).to include_recipe('basebuild::usercfg')
     end
 
   end

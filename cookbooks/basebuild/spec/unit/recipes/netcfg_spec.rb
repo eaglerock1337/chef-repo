@@ -20,7 +20,7 @@ describe 'basebuild::netcfg' do
     end
 
     describe host('bork.eagleworld.net') do
-      it 'can resolve the Chef server' do
+      it 'can be resolved' do
         expect(subject).to be_resolvable.by('dns')
       end
     end

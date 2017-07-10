@@ -18,15 +18,12 @@ describe 'basebuild::usercfg' do
       expect { chef_run }.to_not raise_error
     end
 
-    # TODO: Fix this horseshit
-    # describe command ('grep root /etc/passwd') do
-    #   it 'should set up the root account' do
-    #     expect(stdout).to cmp( /Super\ User/ )
-    #   end
-    # end
+    it 'should modify the root user' do
+      expect(chef_run).to modify_user('root')
+    end
 
     describe user('eaglerock') do
-      it 'should set up EagleRock\'s user' do
+      it 'should be set up' do
         expect(subject).to exist
         expect(subject).to belong_to_group('eaglerock')
         expect(subject).to belong_to_group('sudo')
