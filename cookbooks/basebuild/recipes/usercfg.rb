@@ -4,6 +4,8 @@
 #
 # Copyright (c) 2017 The Authors, All Rights Reserved.
 
+# TODO: Encrypt the data bag once you have access to bork
+
 root_pwd = data_bag_item('basebuild', 'root')
 eaglerock_pwd = data_bag_item('basebuild', 'eaglerock')
 

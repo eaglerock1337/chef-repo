@@ -5,10 +5,19 @@
 # Copyright (c) 2017 The Authors, All Rights Reserved.
 
 require 'spec_helper'
+require 'chefspec'
 # require 'serverspec'
+
+# TODO: add data bag code so this shit works
 
 describe 'basebuild::usercfg' do
   context 'When all attributes are default, on Debian' do
+    # Data bag setup
+    # before do
+    #   cookbook_root = File.expand_path('test/integration/data_bags')
+    #   Chef::Config[:data_bag_path] = File.join(cookbook_root, '.data_bags')
+    # end
+
     let(:chef_run) do
       runner = ChefSpec::ServerRunner.new(platform: 'debian', version: '8.5')
       runner.converge(described_recipe)
