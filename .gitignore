@@ -16,4 +16,5 @@ bin/*
 .kitchen.local.yml
 .chef/
 
+data_bags/
 encrypted_data_bag_secret
