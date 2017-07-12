@@ -19,7 +19,9 @@ describe 'basebuild::install' do
       "rsync",
       "glances",
       "htop",
-      "lshw"
+      "lshw",
+      "sudo",
+      "git"
     ]
 
     it 'converges successfully' do

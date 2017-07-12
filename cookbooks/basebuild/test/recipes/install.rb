@@ -11,7 +11,9 @@ installed_packages = [
   "rsync",
   "glances",
   "htop",
-  "lshw"
+  "lshw",
+  "sudo",
+  "git"
 ]
 
 installed_packages.each do |p|
