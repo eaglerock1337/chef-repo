@@ -4,7 +4,7 @@ maintainer_email 'eaglerock@eagleworld.net'
 license 'all_rights'
 description 'Basebuild cookbook'
 long_description 'Basebuild cookbook for all eagleworld.net systems'
-version '0.1.0'
+version '0.1.1'
 
 depends 'resolver'
 

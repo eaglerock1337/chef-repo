@@ -6,6 +6,7 @@
 
 # TODO: linux logo and MOTD setup
 # TODO: chef-client cron setup
+# TODO: clean up code with foodcritic and whatever that other thing is
 
 include_recipe 'basebuild::apt'
 include_recipe 'basebuild::install'

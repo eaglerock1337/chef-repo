@@ -21,5 +21,3 @@ installed_packages.each do |p|
     it { should be_installed }
   end
 end
-
-#describe package('')

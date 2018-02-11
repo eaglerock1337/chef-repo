@@ -35,7 +35,7 @@ end
 
 template '/etc/vim/vimrc.local' do
   action  :create
-  source  'vimrc.erb'
+  source  'vimrc.local.erb'
   owner   'root'
   group   'root'
   mode    '0644'
@@ -45,3 +45,5 @@ template '/etc/vim/vimrc.local' do
 end
 
 # TODO: Set up color for all necessary commands (grep, ls, vim, etc.)
+
+# TODO: Set up PS1 fucking finally
